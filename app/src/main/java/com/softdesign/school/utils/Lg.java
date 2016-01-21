@@ -3,7 +3,7 @@ package com.softdesign.school.utils;
 import android.util.Log;
 
 /**
- * логер исспользует различные уровни вывода логов: verbose, debug, info, error, warn, assert
+ * логер исспользует различные уровни вывода логов: verbose, debug, info, error, warn
  */
 public class Lg {
     private static final int LOGCAT_BUFFER_SIZE = 3000;
@@ -61,13 +61,6 @@ public class Lg {
         }
     }
 
-    /** вывод лога в asset-уровень */
-    public static void a (String tag, String text){
-        if (get_isEnabled()) {
-            out(tag, text, "a");
-        }
-    }
-
     /** вывод сообщения в логер с учетом размера буфера и выбранного уровня*/
     private static void out(String tag, String text, String mode) {
         if (text.length() > LOGCAT_BUFFER_SIZE){
@@ -97,8 +90,6 @@ public class Lg {
             case "e": Log.d(tag, text);
                 break;
             case "w": Log.v(tag, text);
-                break;
-            case "a": Log.d(tag, text);
                 break;
         }
     }
