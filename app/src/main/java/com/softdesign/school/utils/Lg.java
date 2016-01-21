@@ -85,11 +85,11 @@ public class Lg {
                 break;
             case "d": Log.d(tag, text);
                 break;
-            case "i": Log.v(tag, text);
+            case "i": Log.i(tag, text);
                 break;
-            case "e": Log.d(tag, text);
+            case "e": Log.e(tag, text);
                 break;
-            case "w": Log.v(tag, text);
+            case "w": Log.w(tag, text);
                 break;
         }
     }
