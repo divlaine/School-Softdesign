@@ -3,6 +3,7 @@ package com.softdesign.school;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -32,15 +33,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         mCheckBox = (CheckBox) findViewById(R.id.checkBox);
         mCheckBox.setOnClickListener(this);
-        mEditText2 = (EditText) findViewById(R.id.input_first);
-        mEditTextPassword = (EditText) findViewById(R.id.input_second);
-        mButtonBlue = (Button) findView(R.id.button_blue);
+        mEditText1 = (EditText) findViewById(R.id.input_first);
+        mEditText2 = (EditText) findViewById(R.id.input_second);
+        mButtonBlue = (Button) findViewById(R.id.button_blue);
         mButtonBlue.setOnClickListener(this);
-        mButtonRed = (Button) findView(R.id.button_red);
+        mButtonRed = (Button) findViewById(R.id.button_red);
         mButtonRed.setOnClickListener(this);
-        mButtonGreen = (Button) findView(R.id.button_green);
+        mButtonGreen = (Button) findViewById(R.id.button_green);
         mButtonGreen.setOnClickListener(this);
-
     }
 
     @Override
