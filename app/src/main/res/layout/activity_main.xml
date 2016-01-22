@@ -15,8 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:id="@+id/toolbar"
-        android:elevation="15dp"
-        android:theme="@style/AppTheme.PopupOverlay" />
+        android:elevation="15dp" />
 
     <include layout="@layout/main_content" />
 
