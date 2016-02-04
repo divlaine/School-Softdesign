@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimary">#673ab7</color>
     <color name="colorPrimaryDark">#000000</color>
     <color name="colorAccent">#FF4081</color>
 
-    <color name="icon_color">#ffffff</color>
-    <color name="red">#CD5C5C</color>
-    <color name="red_dark">#B22222</color>
-    <color name="green">#54FF9F</color>
-    <color name="green_dark">#2E8B57</color>
-    <color name="blue">#00F5FF</color>
-    <color name="blue_dark">#00008B</color>
+    <color name="drawer.header.bg">#607d8b</color>
+    <color name="drawer.header.font.main">#ffffff</color>
+    <color name="drawer.header.font.add">#bccbcc</color>
 </resources>
