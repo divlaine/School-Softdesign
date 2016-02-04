@@ -109,13 +109,6 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void setToolbarTitle(String str){
-        ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.setTitle(str);
-        }
-    }
-
     /** настройка тулбара*/
     private void setupToolbar(){
         setSupportActionBar(mToolbar);
@@ -124,6 +117,13 @@ public class MainActivity extends AppCompatActivity {
             actionBar.setDisplayHomeAsUpEnabled(true);
             setToolbarTitle(getResources().getString(R.string.hometask));
             actionBar.setHomeAsUpIndicator(R.drawable.toolbar_options);
+        }
+    }
+
+    private void setToolbarTitle(String str){
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setTitle(str);
         }
     }
 
