@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">school</string>
+    <string name="hometask">Домашнее задание №3</string>
+    <string name="drawer.profile">Профиль</string>
+    <string name="drawer.contacts">Контакты</string>
+    <string name="drawer.team">Комманда</string>
+    <string name="drawer.tasks">Задачи</string>
+    <string name="drawer.settings">Настройки</string>
+    <string name="header.title">Домашнее задание №3</string>
+    <string name="drawer.profile.fio">Бондаренко Антон</string>
+    <string name="drawer.profile.email">divlaine@gmail.com</string>
+    <string name="drawer.status.text">80</string>
+    <string name="fragment.contacts.description">Тут будут контакты</string>
+    <string name="fragment.team.description">Тут будут команды</string>
+    <string name="fragment.tasks.description">Тут будут задачи</string>
+    <string name="fragment.settings.description">Тут будут настройки</string>
+    <string name="fragment.profile.description">Тут будет профиль</string>
+    <string name="fragment.home.description">Начни свой путь</string>
 </resources>

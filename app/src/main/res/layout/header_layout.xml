@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:paddingTop="24dp"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:id="@+id/drawer_header_layout"
+    android:background="@color/drawer.header.bg">
+
+    <ImageView
+        android:layout_width="@dimen/drawer_header_profile_image_size"
+        android:layout_height="@dimen/drawer_header_profile_image_size"
+        android:id="@+id/drawer_image"
+        android:paddingTop="@dimen/padding"
+        android:paddingLeft="@dimen/padding"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/drawer.profile.fio"
+        android:id="@+id/profile_name"
+        android:paddingLeft="@dimen/padding"
+        android:fontFamily="roboto medium"
+        android:layout_marginTop="@dimen/padding"
+        android:textSize="@dimen/drawer_font_size"
+        android:textColor="@color/drawer.header.font.main"
+        android:layout_below="@+id/drawer_image"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/drawer.profile.email"
+        android:id="@+id/profile_email"
+        android:paddingLeft="@dimen/padding"
+        android:fontFamily="roboto regular"
+        android:textSize="@dimen/drawer_font_size"
+        android:textColor="@color/drawer.header.font.add"
+        android:layout_below="@+id/profile_name"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+
+    <ImageView
+        android:layout_width="@dimen/drawer_status_size"
+        android:layout_height="@dimen/drawer_status_size"
+        android:id="@+id/drawer_status_image"
+        android:layout_alignTop="@+id/drawer_image"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="@dimen/padding"
+        android:layout_marginTop="@dimen/padding"
+        android:src="@drawable/drawer_header_status"/>
+
+    <TextView
+        android:layout_width="@dimen/drawer_status_size"
+        android:layout_height="@dimen/drawer_status_size"
+        android:fontFamily="roboto medium"
+        android:textSize="@dimen/drawer_font_size"
+        android:textColor="@color/drawer.header.font.main"
+        android:text="@string/drawer.status.text"
+        android:id="@+id/drawer.status.text"
+        android:gravity="center"
+        android:layout_alignTop="@+id/drawer_status_image"
+        android:layout_alignLeft="@+id/drawer_status_image"
+        android:layout_alignStart="@+id/drawer_status_image"/>
+
+</RelativeLayout>
