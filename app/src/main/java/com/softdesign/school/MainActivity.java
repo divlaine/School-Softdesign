@@ -2,14 +2,18 @@ package com.softdesign.school;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
+import android.support.v4.view.ViewCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -24,7 +28,8 @@ import com.softdesign.school.ui.fragments.TasksFragment;
 import com.softdesign.school.ui.fragments.TeamFragment;
 import com.softdesign.school.utils.RoundImage;
 
-public class MainActivity extends AppCompatActivity {
+
+public class MainActivity extends AppCompatActivity implements AppBarLayout.OnOffsetChangedListener {
 
     private Toolbar mToolbar;
     private DrawerLayout mDrawerLayout;
@@ -32,6 +37,12 @@ public class MainActivity extends AppCompatActivity {
     private ImageView mImageView;
     private Fragment mFragment;
     private FrameLayout mFrameLayout;
+    private AppBarLayout mAppBar;
+    private CollapsingToolbarLayout mCollapsingToolbar;
+    private View mHeaderLayout;
+    private RecyclerView mRecyclerView;
+
+    AppBarLayout.LayoutParams params = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,8 +55,10 @@ public class MainActivity extends AppCompatActivity {
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mNavigationView = (NavigationView) findViewById(R.id.navigation_view);
-        View headerLayout = mNavigationView.getHeaderView(0);
-        mImageView = (ImageView) headerLayout.findViewById(R.id.drawer_image);
+        mHeaderLayout = (View) mNavigationView.getHeaderView(0);
+        mImageView = (ImageView) mHeaderLayout.findViewById(R.id.drawer_image);
+        mCollapsingToolbar = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
+        mAppBar = (AppBarLayout) findViewById(R.id.app_bar);
         setupDrawer();
 
         if (savedInstanceState == null) {
@@ -53,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /** Сброс активного статуса дроуера*/
     private void drawerMenuClear(){
         mNavigationView.getMenu().findItem(R.id.drawer_menu_profile).setChecked(false);
         mNavigationView.getMenu().findItem(R.id.drawer_menu_contacts).setChecked(false);
@@ -118,6 +132,35 @@ public class MainActivity extends AppCompatActivity {
             setToolbarTitle(getResources().getString(R.string.hometask));
             actionBar.setHomeAsUpIndicator(R.drawable.toolbar_options);
         }
+        mCollapsingToolbar = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
+        mCollapsingToolbar.setTitle(getResources().getString(R.string.drawer_profile_fio));
+        mCollapsingToolbar.setExpandedTitleColor(getResources().getColor(R.color.actionbar_title_text));
+        mCollapsingToolbar.setCollapsedTitleTextColor(getResources().getColor(R.color.actionbar_title_text));
+    }
+
+    public void lockAppBar(boolean collaps){
+        params = (AppBarLayout.LayoutParams) mCollapsingToolbar.getLayoutParams();
+
+        if (collaps) {
+            mAppBar.setExpanded(false);
+            mAppBar.addOnOffsetChangedListener(this);
+        //    params.setScrollFlags(0);
+         //   mCollapsingToolbar.setLayoutParams(params);
+        }
+        else{
+            mAppBar.setExpanded(true);
+            params.setScrollFlags(AppBarLayout.LayoutParams.SCROLL_FLAG_SCROLL | AppBarLayout.LayoutParams.SCROLL_FLAG_EXIT_UNTIL_COLLAPSED | AppBarLayout.LayoutParams.SCROLL_FLAG_SNAP);
+            mCollapsingToolbar.setLayoutParams(params);
+        }
+    }
+
+    @Override
+    public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
+        if (mCollapsingToolbar.getHeight() + verticalOffset <= ViewCompat.getMinimumHeight(mCollapsingToolbar) + getResources().getDimension(R.dimen.status_bar_height)) {
+            params.setScrollFlags(0);
+            mCollapsingToolbar.setLayoutParams(params);
+            mAppBar.removeOnOffsetChangedListener(this);
+        }
     }
 
     private void setToolbarTitle(String str){
@@ -141,6 +184,9 @@ public class MainActivity extends AppCompatActivity {
         if (count == 0) {
             finish();
         } else {
+            if (count == 1){
+                drawerMenuClear();
+            }
             android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
             fragmentManager.popBackStack();
             mFragment = fragmentManager.findFragmentById(R.id.frame_layout);

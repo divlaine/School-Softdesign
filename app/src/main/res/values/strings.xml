@@ -6,14 +6,25 @@
     <string name="drawer.team">Комманда</string>
     <string name="drawer.tasks">Задачи</string>
     <string name="drawer.settings">Настройки</string>
-    <string name="header.title">Домашнее задание №3</string>
+    <string name="header.title">Домашнее задание №4</string>
     <string name="drawer.profile.fio">Бондаренко Антон</string>
     <string name="drawer.profile.email">divlaine@gmail.com</string>
-    <string name="drawer.status.text">80</string>
+    <string name="toolbar.age.text">28</string>
+    <string name="drawer.status.text">60</string>
     <string name="fragment.contacts.description">Тут будут контакты</string>
     <string name="fragment.team.description">Тут будут команды</string>
     <string name="fragment.tasks.description">Тут будут задачи</string>
     <string name="fragment.settings.description">Тут будут настройки</string>
     <string name="fragment.profile.description">Тут будет профиль</string>
     <string name="fragment.home.description">Начни свой путь</string>
+    <string name="fragment_profile_phone_title">Мобильный</string>
+    <string name="fragment_profile_email_title">E-mail</string>
+    <string name="fragment_profile_vk_title">Профиль Вконтакте</string>
+    <string name="fragment_profile_git_title">Репозиторий</string>
+    <string name="fragment_profile_about_title">Кратко о себе</string>
+    <string name="myPhone">+7(917)974-92-79</string>
+    <string name="myEmail">divlaine@gmail.com</string>
+    <string name="myVk">vk.com/divlaine</string>
+    <string name="myGit">https://github.com/divlaine</string>
+    <string name="myAbout">к.т.н., музыка, книги</string>
 </resources>

@@ -1,14 +1,218 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/fragment.profile.description"
-        android:id="@+id/page_description"
-        android:layout_gravity="center_horizontal"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
-</RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/fragment_profile_item_height">
+
+        <ImageView
+            android:layout_width="@dimen/fragment_profile_item_image_size"
+            android:layout_height="@dimen/fragment_profile_item_image_size"
+            android:src="@drawable/fragment_profile_phone"
+            android:id="@+id/imageView"
+            android:layout_marginLeft="@dimen/padding"
+            android:layout_centerVertical="true"/>
+
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:paddingLeft="@dimen/margin"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/profile_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/fontsize_medium"
+                android:textColor="@color/fragment.profile.font.main"
+                android:text="@string/myPhone" />
+
+            <TextView
+                android:textSize="@dimen/fontsize_caption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/fragment.profile.font.add"
+                android:text="@string/fragment_profile_phone_title" />
+        </LinearLayout>
+
+        <View android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:background="@color/fragment.profile.sep"
+            android:layout_marginLeft="@dimen/margin"
+            android:layout_alignParentBottom="true"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/fragment_profile_item_height">
+
+        <ImageView
+            android:layout_width="@dimen/fragment_profile_item_image_size"
+            android:layout_height="@dimen/fragment_profile_item_image_size"
+            android:src="@drawable/fragment_profile_email"
+            android:id="@+id/imageView"
+            android:layout_marginLeft="@dimen/padding"
+            android:layout_centerVertical="true"/>
+
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:paddingLeft="@dimen/margin"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/profile_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/fontsize_medium"
+                android:textColor="@color/fragment.profile.font.main"
+                android:text="@string/myEmail" />
+
+            <TextView
+                android:textSize="@dimen/fontsize_caption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/fragment.profile.font.add"
+                android:text="@string/fragment_profile_email_title" />
+        </LinearLayout>
+
+        <View android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:background="@color/fragment.profile.sep"
+            android:layout_marginLeft="@dimen/margin"
+            android:layout_alignParentBottom="true"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/fragment_profile_item_height">
+
+        <ImageView
+            android:layout_width="@dimen/fragment_profile_item_image_size"
+            android:layout_height="@dimen/fragment_profile_item_image_size"
+            android:src="@drawable/fragment_profile_vk"
+            android:id="@+id/imageView"
+            android:layout_marginLeft="@dimen/padding"
+            android:layout_centerVertical="true"/>
+
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:paddingLeft="@dimen/margin"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/profile_vk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/fontsize_medium"
+                android:textColor="@color/fragment.profile.font.main"
+                android:text="@string/myVk" />
+
+            <TextView
+                android:textSize="@dimen/fontsize_caption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/fragment.profile.font.add"
+                android:text="@string/fragment_profile_vk_title" />
+        </LinearLayout>
+
+        <View android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:background="@color/fragment.profile.sep"
+            android:layout_marginLeft="@dimen/margin"
+            android:layout_alignParentBottom="true"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/fragment_profile_item_height">
+
+        <ImageView
+            android:layout_width="@dimen/fragment_profile_item_image_size"
+            android:layout_height="@dimen/fragment_profile_item_image_size"
+            android:src="@drawable/fragment_profile_git"
+            android:id="@+id/imageView"
+            android:layout_marginLeft="@dimen/padding"
+            android:layout_centerVertical="true"/>
+
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:paddingLeft="@dimen/margin"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/profile_git"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/fontsize_medium"
+                android:textColor="@color/fragment.profile.font.main"
+                android:text="@string/myGit" />
+
+            <TextView
+                android:textSize="@dimen/fontsize_caption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/fragment.profile.font.add"
+                android:text="@string/fragment_profile_git_title" />
+        </LinearLayout>
+
+        <View android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:background="@color/fragment.profile.sep"
+            android:layout_marginLeft="@dimen/margin"
+            android:layout_alignParentBottom="true"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/fragment_profile_item_height">
+
+        <ImageView
+            android:layout_width="@dimen/fragment_profile_item_image_size"
+            android:layout_height="@dimen/fragment_profile_item_image_size"
+            android:src="@drawable/fragment_profile_about"
+            android:id="@+id/imageView"
+            android:layout_marginLeft="@dimen/padding"
+            android:layout_centerVertical="true"/>
+
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:paddingLeft="@dimen/margin"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/profile_about"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/fontsize_medium"
+                android:textColor="@color/fragment.profile.font.main"
+                android:text="@string/myAbout" />
+
+            <TextView
+                android:textSize="@dimen/fontsize_caption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/fragment.profile.font.add"
+                android:text="@string/fragment_profile_about_title" />
+        </LinearLayout>
+
+        <View android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:background="@color/fragment.profile.sep"
+            android:layout_marginLeft="@dimen/margin"
+            android:layout_alignParentBottom="true"/>
+
+    </RelativeLayout>
+
+</LinearLayout>
