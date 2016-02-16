@@ -46,6 +46,7 @@ public class ContactsFragment extends Fragment {
         mRecyclerView.setAdapter(userAdapter);
         int itemHeight = (int) getResources().getDimension(R.dimen.fragment_contacts_item_height);
         int size = mUsers.size();
+        // без установки высоты не отображаются вообще элементы, если установить мало часть элементов скроется
         mRecyclerView.setMinimumHeight(size * itemHeight);
         return convertView;
     }
