@@ -7,4 +7,15 @@
     <color name="drawer.header.bg">#607d8b</color>
     <color name="drawer.header.font.main">#ffffff</color>
     <color name="drawer.header.font.add">#bccbcc</color>
+
+    <color name="actionbar.title.text">#ffffff</color>
+
+    <color name="fragment.profile.font.main">#ffffff</color>
+    <color name="fragment.profile.font.add">#808080</color>
+    <color name="fragment.profile.sep">#808080</color>
+
+    <color name="fragment.contacts.font.main">#ffffff</color>
+    <color name="fragment.contacts.sep">#808080</color>
+
+    <color name="actionbutton.color">#673ab7</color>
 </resources>

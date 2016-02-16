@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:paddingTop="@dimen/padding"
+    android:paddingBottom="@dimen/padding"
+    android:layout_height="@dimen/fragment_contacts_item_height">
+
+    <ImageView
+        android:layout_width="@dimen/fragment_profile_item_image_size"
+        android:layout_height="@dimen/fragment_profile_item_image_size"
+        android:src="@drawable/contact_icon"
+        android:id="@+id/fragment_contacts_icon"
+        android:layout_marginLeft="@dimen/padding"
+        android:layout_centerVertical="true"/>
+
+    <TextView
+        android:id="@+id/fragment_contacts_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/fontsize_medium"
+        android:textColor="@color/fragment.contacts.font.main"
+        android:paddingLeft="@dimen/margin"/>
+
+</RelativeLayout>

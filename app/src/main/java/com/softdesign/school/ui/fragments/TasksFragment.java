@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.softdesign.school.MainActivity;
 import com.softdesign.school.R;
 
 /**
@@ -17,8 +18,15 @@ public class TasksFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View convertView = inflater.inflate(R.layout.fragment_team, null, false);
+        View convertView = inflater.inflate(R.layout.fragment_team, container, false);
         getActivity().setTitle(R.string.drawer_tasks);
         return convertView;
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+        ((MainActivity) getActivity()).lockAppBar(true);
     }
 }
