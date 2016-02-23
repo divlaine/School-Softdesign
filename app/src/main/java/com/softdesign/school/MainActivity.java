@@ -2,6 +2,7 @@ package com.softdesign.school;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.support.annotation.Nullable;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.NavigationView;
@@ -28,19 +29,20 @@ import com.softdesign.school.ui.fragments.TasksFragment;
 import com.softdesign.school.ui.fragments.TeamFragment;
 import com.softdesign.school.utils.RoundImage;
 
+import butterknife.ButterKnife;
+import butterknife.Bind;
 
 public class MainActivity extends AppCompatActivity implements AppBarLayout.OnOffsetChangedListener {
 
-    private Toolbar mToolbar;
-    private DrawerLayout mDrawerLayout;
-    private NavigationView mNavigationView;
-    private ImageView mImageView;
+    @Bind(R.id.toolbar) Toolbar mToolbar;
+    @Bind(R.id.frame_layout) FrameLayout mFrameLayout;
+    @Bind(R.id.drawer_layout) DrawerLayout mDrawerLayout;
+    @Bind(R.id.navigation_view) NavigationView mNavigationView;
+    @Bind(R.id.collapsing_toolbar) CollapsingToolbarLayout mCollapsingToolbar;
+    @Bind(R.id.app_bar) AppBarLayout mAppBar;
+    @Nullable @Bind(R.id.drawer_image) ImageView mImageView;
     private Fragment mFragment;
-    private FrameLayout mFrameLayout;
-    private AppBarLayout mAppBar;
-    private CollapsingToolbarLayout mCollapsingToolbar;
     private View mHeaderLayout;
-    private RecyclerView mRecyclerView;
 
     AppBarLayout.LayoutParams params = null;
 
@@ -49,21 +51,17 @@ public class MainActivity extends AppCompatActivity implements AppBarLayout.OnOf
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mFrameLayout = (FrameLayout) findViewById(R.id.frame_layout);
-        mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction().add(R.id.frame_layout, new HomeFragment()).commit();
+        }
+
+        ButterKnife.bind(this);
+
         setupToolbar();
 
-        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-        mNavigationView = (NavigationView) findViewById(R.id.navigation_view);
         mHeaderLayout = (View) mNavigationView.getHeaderView(0);
         mImageView = (ImageView) mHeaderLayout.findViewById(R.id.drawer_image);
-        mCollapsingToolbar = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
-        mAppBar = (AppBarLayout) findViewById(R.id.app_bar);
         setupDrawer();
-
-        if (savedInstanceState == null) {
-           getSupportFragmentManager().beginTransaction().add(R.id.frame_layout, new HomeFragment()).commit();
-        }
     }
 
     /** Сброс активного статуса дроуера*/
@@ -132,7 +130,6 @@ public class MainActivity extends AppCompatActivity implements AppBarLayout.OnOf
             setToolbarTitle(getResources().getString(R.string.hometask));
             actionBar.setHomeAsUpIndicator(R.drawable.toolbar_options);
         }
-        mCollapsingToolbar = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
         mCollapsingToolbar.setTitle(getResources().getString(R.string.drawer_profile_fio));
         mCollapsingToolbar.setExpandedTitleColor(getResources().getColor(R.color.actionbar_title_text));
         mCollapsingToolbar.setCollapsedTitleTextColor(getResources().getColor(R.color.actionbar_title_text));

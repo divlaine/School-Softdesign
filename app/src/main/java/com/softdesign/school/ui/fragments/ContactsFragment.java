@@ -17,13 +17,12 @@ import com.softdesign.school.ui.adapters.UserAdapter;
 
 import java.util.ArrayList;
 
-/**
- * Created by bit on 04.02.2016.
- */
+import butterknife.Bind;
+import butterknife.ButterKnife;
 
 public class ContactsFragment extends Fragment {
 
-    private RecyclerView mRecyclerView;
+    @Bind(R.id.contacts_layout) RecyclerView mRecyclerView;
     private UserAdapter userAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     View convertView;
@@ -34,12 +33,13 @@ public class ContactsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         if (convertView == null) {
             convertView = inflater.inflate(R.layout.fragment_contacts, container, false);
+            ButterKnife.bind(this, convertView);
         }
         getActivity().setTitle(R.string.drawer_contacts);
 
         generateUsersData();
+
         Activity activity = getActivity();
-        RecyclerView mRecyclerView = (RecyclerView) convertView.findViewById(R.id.contacts_layout);
         mLayoutManager = new LinearLayoutManager(activity);
         mRecyclerView.setLayoutManager(mLayoutManager);
         userAdapter = new UserAdapter(mUsers);
